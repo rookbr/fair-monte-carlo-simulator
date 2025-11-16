@@ -288,7 +288,6 @@ MIT License - see LICENSE file for details
 
 For issues, questions, or contributions:
 - Create an issue on GitHub
-- Email: support@example.com
 
 ## Credits
 
@@ -302,4 +301,4 @@ Developed using:
 ---
 
 **Version**: 1.0.0  
-**Last Updated**: 2024
+**Last Updated**: 2025
