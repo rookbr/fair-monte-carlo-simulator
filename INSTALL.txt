@@ -1,0 +1,112 @@
+================================================================================
+FAIR MONTE CARLO SIMULATOR - INSTALLATION INSTRUCTIONS
+================================================================================
+
+QUICK SETUP (3 STEPS):
+----------------------
+
+1. Run the setup script:
+   $ cd /var/www/html/fair-monte-carlo
+   $ ./setup.sh
+
+2. Test your configuration:
+   Open in browser: http://localhost/fair-monte-carlo/test_connection.php
+
+3. Start using the simulator:
+   Open in browser: http://localhost/fair-monte-carlo/
+
+================================================================================
+
+MANUAL SETUP:
+-------------
+
+1. CREATE DATABASE:
+   $ mysql -u root -p
+   mysql> CREATE DATABASE fair_monte_carlo CHARACTER SET utf8mb4;
+   mysql> USE fair_monte_carlo;
+   mysql> SOURCE db/schema.sql;
+   mysql> EXIT;
+
+2. CONFIGURE DATABASE CONNECTION:
+   Edit config.php and set:
+   - DB_HOST (default: localhost)
+   - DB_NAME (default: fair_monte_carlo)
+   - DB_USER (your MySQL username)
+   - DB_PASS (your MySQL password)
+
+3. SET PERMISSIONS:
+   $ chmod 755 *.php
+   $ chmod 755 api/*.php
+
+4. ENABLE APACHE MOD_REWRITE:
+   $ sudo a2enmod rewrite
+   $ sudo systemctl restart apache2
+
+5. TEST CONNECTION:
+   Visit: http://localhost/fair-monte-carlo/test_connection.php
+
+================================================================================
+
+REQUIREMENTS:
+-------------
+- PHP 8.0 or higher
+- MySQL 8.0 or higher
+- Apache with mod_rewrite
+- PDO PHP extension
+- 512MB+ RAM (for large simulations)
+
+================================================================================
+
+TROUBLESHOOTING:
+----------------
+
+Problem: "Database connection failed"
+Solution: Check credentials in config.php, verify MySQL is running
+
+Problem: "Can't access the page"
+Solution: Check Apache is running, verify mod_rewrite is enabled
+
+Problem: "Permission denied"
+Solution: Check file permissions with ls -la
+
+Problem: "Simulation takes too long"
+Solution: Reduce iterations or increase PHP max_execution_time
+
+================================================================================
+
+DOCUMENTATION:
+--------------
+- README.md - Full documentation
+- QUICKSTART.md - 5-minute quick start guide
+- PROJECT_SUMMARY.md - Complete project overview
+- test_connection.php - Test your configuration
+
+================================================================================
+
+USAGE:
+------
+1. Navigate to index.php
+2. Enter simulation parameters
+3. Click "Run Simulation"
+4. View results and statistics
+5. Export to CSV or save for later
+
+View history at: http://localhost/fair-monte-carlo/history.php
+
+================================================================================
+
+SUPPORT:
+--------
+For issues, refer to:
+- README.md (Troubleshooting section)
+- test_connection.php (diagnostic tool)
+- Apache error log: /var/log/apache2/error.log
+- PHP error log: /var/log/php_errors.log
+
+================================================================================
+
+VERSION: 1.0.0
+DATE: 2024-11-16
+LICENSE: MIT
+
+================================================================================

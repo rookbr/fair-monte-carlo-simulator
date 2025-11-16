@@ -1,0 +1,45 @@
+# FAIR Monte Carlo Simulator - Git Ignore File
+
+# Environment files with sensitive data
+.env
+config.local.php
+
+# Database credentials (if you create separate file)
+db_credentials.php
+
+# Logs
+*.log
+error.log
+debug.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Node modules (if you add any JS tooling later)
+node_modules/
+
+# Vendor (if you add Composer later)
+vendor/
+
+# User uploaded files
+uploads/
+*.csv
+
+# Cache
+cache/
+*.cache
